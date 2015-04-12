@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Binding CA\n"
-"POT-Creation-Date: 2015-04-12 18:03+0100\n"
+"POT-Creation-Date: 2015-04-12 18:15+0100\n"
 "PO-Revision-Date: \n"
-"Last-Translator: Lluis Gerard <lg@lluisgerard.com>\n"
+"Last-Translator: Andres Gutierrez <andresgutgon@gmail.com>\n"
 "Language-Team: Binding\n"
 "Language: ca_ES\n"
 "MIME-Version: 1.0\n"
@@ -24,11 +24,13 @@ msgid ""
 "You are using an <strong>outdated</strong> browser. Please <a href=\"http://"
 "browsehappy.com/\">upgrade your browser</a> to improve your experience."
 msgstr ""
+"You are using an <strong>outdated</strong> browser. Please <a href=\"http://"
+"browsehappy.com/\">upgrade your browser</a> to improve your experience."
 
 #: binding-project/binding/web/app/themes/binding/functions.php:27
 #, php-format
 msgid "Error locating %s for inclusion"
-msgstr ""
+msgstr "Error locating %s for inclusion"
 
 #: binding-project/binding/web/app/themes/binding/index.php:5
 msgid "Sorry, no results were found."
@@ -44,11 +46,11 @@ msgstr "Menú Primari"
 
 #: binding-project/binding/web/app/themes/binding/lib/init.php:49
 msgid "Primary"
-msgstr ""
+msgstr "Primario"
 
 #: binding-project/binding/web/app/themes/binding/lib/init.php:58
 msgid "Footer"
-msgstr ""
+msgstr "Pie de pagina"
 
 #: binding-project/binding/web/app/themes/binding/lib/titles.php:13
 msgid "Latest Posts"
@@ -57,14 +59,13 @@ msgstr "Últims articles"
 #: binding-project/binding/web/app/themes/binding/lib/titles.php:18
 #, php-format
 msgid "Search Results for %s"
-msgstr ""
+msgstr "Resultats para %s"
 
 #: binding-project/binding/web/app/themes/binding/lib/titles.php:20
 msgid "Not Found"
-msgstr ""
+msgstr "No trubado"
 
 #: binding-project/binding/web/app/themes/binding/templates/comments.php:19
-#: binding-project/binding/web/app/themes/binding/templates/comments.php:34
 msgid "&larr; Older comments"
 msgstr "&larr; Comentaris anteriors"
 
@@ -83,11 +84,11 @@ msgstr "Pàgines:"
 
 #: binding-project/binding/web/app/themes/binding/templates/entry-meta.php:2
 msgid "By"
-msgstr ""
+msgstr "Por"
 
 #: binding-project/binding/web/app/themes/binding/templates/header.php:7
 msgid "Toggle navigation"
-msgstr ""
+msgstr "Cambia navegacio"
 
 #: binding-project/binding/web/app/themes/binding/templates/searchform.php:2
 msgid "Search for:"
