@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2ec1f94b389b876ae7e8adfb4af3f5cb",
+    "hash": "474f6cebea45093ba23e78abfe4fee6c",
     "packages": [
         {
             "name": "composer/installers",
@@ -519,16 +519,16 @@
             "time": "2014-10-16 14:50:21"
         },
         {
-            "name": "wpackagist-plugin/advanced-custom-fields",
-            "version": "4.4.1",
+            "name": "wpackagist-plugin/cmb2",
+            "version": "2.0.5",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/advanced-custom-fields/",
+                "url": "http://plugins.svn.wordpress.org/cmb2/",
                 "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/advanced-custom-fields.zip",
+                "url": "https://downloads.wordpress.org/plugin/cmb2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -536,7 +536,7 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/advanced-custom-fields/"
+            "homepage": "https://wordpress.org/plugins/cmb2/"
         },
         {
             "name": "wpackagist-plugin/qtranslate-slug",
