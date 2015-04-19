@@ -219,6 +219,7 @@ gulp.task('watch', function() {
   console.log('config.devUrl', config.devUrl);
   browserSync({
     proxy: config.devUrl,
+    port: 8080,
     snippetOptions: {
       whitelist: ['/wp-admin/admin-ajax.php'],
       blacklist: ['/wp-admin/**']
