@@ -18,6 +18,18 @@
         wp_nav_menu(['theme_location' => 'primary_navigation', 'walker' => new NavWalker(), 'menu_class' => 'nav navbar-nav']);
       endif;
       ?>
+
+      <?php if (function_exists('qts_language_menu')) {
+        //qts_language_menu('text');
+        $type = 'text';
+        $args = array(
+            'id' => 'qts-lang-menu', // ID of html oputput
+            'class' => 'qts-lang-menu nav navbar-nav',  // class / classes of the html output
+            'short' => false // if true, display text as short 'English' -> 'en'
+        );
+        qts_language_menu($type, $args);
+      } ?>
+
     </nav>
   </div>
 </header>

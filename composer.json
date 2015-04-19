@@ -49,9 +49,10 @@
     "koodimonni/composer-dropin-installer": "dev-master",
     "vlucas/phpdotenv": "~1.0.9",
     "johnpbloch/wordpress": "4.1.1",
-    "roots/soil": "3.1.0",
     "koodimonni-language/ca": "*",
-    "koodimonni-language/es_es": "*"
+    "koodimonni-language/es_es": "*",
+    "wpackagist-plugin/qtranslate-x": "3.2.9",
+    "wpackagist-plugin/qtranslate-slug": "1.1.16"
   },
   "extra": {
     "installer-paths": {
@@ -64,5 +65,6 @@
       "web/app/languages": ["type:wordpress-language"],
       "web/app/languages": ["vendor:koodimonni-language"]
     }
-  }
+  },
+  "wordpress-languages-dir":"web/app/languages"
 }
