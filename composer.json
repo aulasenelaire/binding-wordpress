@@ -48,7 +48,7 @@
     "composer/installers": "~1.0.12",
     "koodimonni/composer-dropin-installer": "dev-master",
     "vlucas/phpdotenv": "~1.0.9",
-    "johnpbloch/wordpress": "4.1.1",
+    "johnpbloch/wordpress": "4.2",
     "koodimonni-language/ca": "*",
     "koodimonni-language/es_es": "*",
     "wpackagist-plugin/qtranslate-x": "3.2.9",
