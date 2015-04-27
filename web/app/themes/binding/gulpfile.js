@@ -70,9 +70,6 @@ var cssTasks = function(filename) {
       return $.if(enabled.maps, $.sourcemaps.init());
     })
       .pipe(function() {
-        return $.if('*.less', $.less());
-      })
-      .pipe(function() {
         return $.if('*.scss', $.sass({
           outputStyle: 'nested', // libsass doesn't support expanded yet
           precision: 10,
@@ -83,7 +80,7 @@ var cssTasks = function(filename) {
       .pipe($.concat, filename)
       .pipe($.autoprefixer, {
         browsers: [
-          'last 2 versions', 'ie 8', 'ie 9', 'android 2.3', 'android 4',
+          'last 2 versions', 'ie 9', 'android 2.3', 'android 4',
           'opera 12'
         ]
       })
@@ -177,6 +174,7 @@ gulp.task('scripts', ['jshint'], function() {
 // `gulp fonts` - Grabs all the fonts and outputs them in a flattened directory
 // structure. See: https://github.com/armed/gulp-flatten
 gulp.task('fonts', function() {
+  console.log('globs.fonts', globs.fonts);
   return gulp.src(globs.fonts)
     .pipe($.flatten())
     .pipe(gulp.dest(path.dist + 'fonts'));
@@ -251,7 +249,9 @@ gulp.task('build', function(callback) {
 gulp.task('wiredep', function() {
   var wiredep = require('wiredep').stream;
   return gulp.src(project.css)
-    .pipe(wiredep())
+    .pipe(wiredep({
+      exclude: [/bower_components\/bootstrap-sass-official\/assets\/stylesheets/]
+    }))
     .pipe($.changed(path.source + 'styles', {
       hasChanged: $.changed.compareSha1Digest
     }))
