@@ -1,14 +1,14 @@
-<?php get_template_part('templates/page', 'header'); ?>
+<?php
 
-<?php if (!have_posts()) : ?>
-  <div class="alert alert-warning">
-    <?php _e('Sorry, no results were found.', 'binding'); ?>
-  </div>
-  <?php get_search_form(); ?>
-<?php endif; ?>
-
-<?php while (have_posts()) : the_post(); ?>
-  <?php get_template_part('templates/content', get_post_type() != 'post' ? get_post_type() : get_post_format()); ?>
-<?php endwhile; ?>
-
-<?php the_posts_navigation(); ?>
+if ( ! class_exists( 'Timber' ) ) {
+	echo 'Timber not activated. Make sure you activate the plugin in <a href="/wp-admin/plugins.php#timber">/wp-admin/plugins.php</a>';
+	return;
+}
+$context = Timber::get_context();
+$context['posts'] = Timber::get_posts();
+$context['foo'] = 'bar';
+$templates = array( 'index.twig' );
+if ( is_home() ) {
+	array_unshift( $templates, 'home.twig' );
+}
+Timber::render( $templates, $context );

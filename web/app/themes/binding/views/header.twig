@@ -1,0 +1,34 @@
+<header class="banner navbar navbar-default navbar-fixed-top" role="banner">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">{{ __('Toggle navigation', 'binding') }}</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">{{site.name}}</a>
+    </div>
+
+    <nav class="collapse navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        {% for item in top_menu.get_items %}
+          <li class="{{item.classes | join(' ')}}">
+            <a href="{{item.get_link}}">{{item.title}}</a>
+          </li>
+        {% endfor %}
+      </ul>      
+      <?php if (function_exists('qts_language_menu')) {
+        //qts_language_menu('text');
+        $type = 'text';
+        $args = array(
+            'id' => 'qts-lang-menu', // ID of html oputput
+            'class' => 'qts-lang-menu nav navbar-nav',  // class / classes of the html output
+            'short' => false // if true, display text as short 'English' -> 'en'
+        );
+        qts_language_menu($type, $args);
+      } ?>
+
+    </nav>
+  </div>
+</header>

@@ -53,7 +53,8 @@
     "koodimonni-language/es_es": "*",
     "wpackagist-plugin/qtranslate-x": "3.2.9",
     "wpackagist-plugin/qtranslate-slug": "1.1.16",
-    "wpackagist-plugin/cmb2": "2.0.5"
+    "wpackagist-plugin/cmb2": "2.0.5",
+    "wpackagist-plugin/timber-library": "0.21.1"
   },
   "extra": {
     "installer-paths": {

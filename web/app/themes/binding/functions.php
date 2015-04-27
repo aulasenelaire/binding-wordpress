@@ -12,7 +12,6 @@
 $binding_includes = [
   'lib/utils.php',                 // Utility functions
   'lib/init.php',                  // Initial theme setup and constants
-  'lib/wrapper.php',               // Theme wrapper class
   'lib/conditional-tag-check.php', // ConditionalTagCheck class
   'lib/config.php',                // Configuration
   'lib/assets.php',                // Scripts and stylesheets
@@ -21,7 +20,7 @@ $binding_includes = [
   'lib/gallery.php',               // Custom [gallery] modifications
   'lib/extras.php',                // Custom functions
   'lib/cmb2.php',                  // Custom Fields declarations
-  //'lib/timber.php',                // Timber template system configuration  
+  'lib/timber.php',                // Timber template system configuration
   'lib/binding.php'                // Binding custom functions. Extra from roots/sage starter theme
 ];
 
