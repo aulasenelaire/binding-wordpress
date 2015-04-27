@@ -11,23 +11,21 @@
     </div>
 
     <nav class="collapse navbar-collapse" role="navigation">
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav navbar-right">
         {% for item in top_menu.get_items %}
           <li class="{{item.classes | join(' ')}}">
             <a href="{{item.get_link}}">{{item.title}}</a>
           </li>
         {% endfor %}
       </ul>      
-      <?php if (function_exists('qts_language_menu')) {
-        //qts_language_menu('text');
-        $type = 'text';
-        $args = array(
-            'id' => 'qts-lang-menu', // ID of html oputput
-            'class' => 'qts-lang-menu nav navbar-nav',  // class / classes of the html output
-            'short' => false // if true, display text as short 'English' -> 'en'
-        );
-        qts_language_menu($type, $args);
-      } ?>
+
+      {% set args = {
+        'id': 'qts-lang-menu',
+        'class': 'qts-lang-menu nav navbar-nav',
+        'short': false
+      } %}
+
+      {{function('qts_language_menu', 'text', args)}}
 
     </nav>
   </div>
