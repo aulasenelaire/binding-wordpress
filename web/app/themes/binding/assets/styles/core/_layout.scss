@@ -1,0 +1,13 @@
+.page-wrapper {
+  min-height: 100%;
+  position: relative;
+}
+
+@media (min-width: $screen-md-min) {
+  body {
+    /*padding-top: $navbar-height + $top-navigation-padding;*/
+  }
+  .container-fluid {
+    max-width: $max-width-screen;
+  } 
+}

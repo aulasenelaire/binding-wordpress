@@ -1,32 +1,39 @@
-<header class="banner navbar navbar-default navbar-fixed-top" role="banner">
+<header class='top-navigation'>
   <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">{{ __('Toggle navigation', 'binding') }}</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/">{{site.name}}</a>
-    </div>
+   <div class='row'>
+      <div class="navbar col-sm-12 navbar-defaut navbar-fixed-top" role="banner">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">{{ __('Toggle navigation', 'binding') }}</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">
+            <span class='sr-only'>{{site.name}}</span>
+          </a>
+        </div>
 
-    <nav class="collapse navbar-collapse" role="navigation">
-      <ul class="nav navbar-nav navbar-right">
-        {% for item in top_menu.get_items %}
-          <li class="{{item.classes | join(' ')}}">
-            <a href="{{item.get_link}}">{{item.title}}</a>
-          </li>
-        {% endfor %}
-      </ul>      
+        <nav class="collapse navbar-collapse" role="navigation">
+          <ul class="nav navbar-nav navbar-right">
+            {% for item in top_menu.get_items %}
+              <li class="{{item.classes | join(' ')}}">
+                <a href="{{item.get_link}}">{{item.title}}</a>
+              </li>
+            {% endfor %}
+          </ul>      
 
-      {% set args = {
-        'id': 'qts-lang-menu',
-        'class': 'qts-lang-menu nav navbar-nav',
-        'short': false
-      } %}
+          {% set args = {
+            'id': 'qts-lang-menu',
+            'class': 'qts-lang-menu nav navbar-nav navbar-right language-chooser',
+            'short': false
+          } %}
 
-      {{function('qts_language_menu', 'text', args)}}
+          {{function('qts_language_menu', 'text', args)}}
 
-    </nav>
+        </nav>
+      </div>
+     
+   </div> 
   </div>
 </header>

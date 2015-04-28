@@ -11,19 +11,22 @@
     {% endblock %}
   </head>
 
-	<body class="{{body_class}}" data-template="base.twig">
+	<body class="binding {{body_class}}" data-template="base.twig">
 
-		<header class="header" >
-			{% block header %}{% include 'header.twig' %}{% endblock %}
-		</header>
+    {% block header %}
+      {% include 'header.twig' %}
+    {% endblock %}
 
-		<div role="main">
-      {% block content %}{% endblock %}
-		</div>
+    <div class='page-wrapper'>
+      <div role="main">
+        {% block content %}{% endblock %}
+      </div>
 
-		{% block footer %}
-			<footer>{% include 'footer.twig' %}</footer>
-			{{ function('wp_footer') }}
-		{% endblock %}
+      {% block footer %}
+        <footer>{% include 'footer.twig' %}</footer>
+        {{ function('wp_footer') }}
+      {% endblock %}
+    </div>
+
 	</body>
 </html>

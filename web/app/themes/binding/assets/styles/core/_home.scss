@@ -1,0 +1,52 @@
+.home__hero {
+  position: relative;
+  height: 600px;
+  width: 100%;
+  background-color: #333;
+}
+.home__hero__caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100px;
+  z-index: 3;
+  color: white;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.9);
+}
+.home__hero__bg {
+  background-image: url(/app/themes/binding/dist/images/home-hero-2.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 30% 0;
+  z-index: 1;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0
+}
+.home__hero__bg-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background: linear-gradient(to left,rgba(0,0,0,.65) 0,transparent 100%);
+}
+
+@media (min-width: $screen-sm-min) {
+  .home__hero__bg {
+    background-position: 50% 0;
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .home__hero__caption {
+    bottom: 200px;
+    h1 {
+      font-size: 60px;
+    }
+  }
+}
