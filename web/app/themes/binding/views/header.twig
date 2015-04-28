@@ -1,7 +1,7 @@
 <header class='top-navigation'>
   <div class="container-fluid">
    <div class='row'>
-      <div class="navbar col-sm-12 navbar-defaut navbar-fixed-top" role="banner">
+      <div class="navbar col-sm-12 navbar-fixed-top" role="banner">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">{{ __('Toggle navigation', 'binding') }}</span>
@@ -14,7 +14,7 @@
           </a>
         </div>
 
-        <nav class="collapse navbar-collapse" role="navigation">
+        <nav class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             {% for item in top_menu.get_items %}
               <li class="{{item.classes | join(' ')}}">
