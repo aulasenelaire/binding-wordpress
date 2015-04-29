@@ -11,7 +11,7 @@
     {% endblock %}
   </head>
 
-	<body class="binding {{body_class}}" data-template="base.twig">
+	<body class="binding {{ page_has_hero == true ? 'page-with-hero' }} {{body_class}}" data-template="base.twig">
 
     {% block header %}
       {% include 'header.twig' %}

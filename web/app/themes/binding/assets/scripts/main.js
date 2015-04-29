@@ -16,7 +16,6 @@ function _resizeHeroTopNavigation (options) {
     s1FadedEls = options.s1FadedEls, 
     $header = options.header,
     s1StopScroll = options.s1StopScroll, 
-    antiflicker = options.antiflicker, 
     s1_overlay = options.s1_overlay,
     s1_overlay_bg = options.s1_overlay_bg,
     antiflickerStopScroll = options.antiflickerStopScroll,
@@ -39,26 +38,22 @@ function _resizeHeroTopNavigation (options) {
   s1FadedEls.each(function() {
     $(this).css('opacity', $(this).data('origOpacity') * opacity);
   });
-
-  antiflicker.css({
-    'opacity': 1.0001 - opacityAntiflicker
-  });
 }
+
 startupKit.uiKitHeader._inFixedMode = function(headerClass) {
   var $header = $(headerClass);
 
-  if ($(headerClass).hasClass('over-hero')) {
-    var s1 = $(headerClass + '-sub'),
-      fake_top_nav_wrapper = 100,
-      s1StopScroll = s1.outerHeight() - fake_top_nav_wrapper,
-      s1FadedEls = $('.js-hero-background, .js-hero-caption, .js-hero-overlay', s1),
+  if ($header) {
+    var hero_section = $('.js-hero-section'),
+      fake_top_nav_wrapper = 60,
+      s1StopScroll = hero_section.outerHeight() - fake_top_nav_wrapper,
+      s1FadedEls = $('.js-hero-background, .js-hero-caption, .js-hero-overlay', hero_section),
       antiflicker,
       options,
-      s1_overlay = $('.js-hero-overlay', s1),
+      s1_overlay = $('.js-hero-overlay', hero_section),
       s1_overlay_bg = s1_overlay.css('background'),
       antiflickerStopScroll = fake_top_nav_wrapper;
 
-    antiflicker = $('<div class="' + headerClass.slice(1) + '-startup-antiflicker header-antiflicker fake-top-navigation-bg" style="opacity: 0.0001;" />');
 
     $('body').append(antiflicker);
 
@@ -71,7 +66,6 @@ startupKit.uiKitHeader._inFixedMode = function(headerClass) {
       s1FadedEls: s1FadedEls, 
       header: $header,
       s1StopScroll: s1StopScroll, 
-      antiflicker: antiflicker, 
       s1_overlay: s1_overlay,
       s1_overlay_bg: s1_overlay_bg,
       antiflickerStopScroll: antiflickerStopScroll
@@ -84,15 +78,12 @@ startupKit.uiKitHeader._inFixedMode = function(headerClass) {
     $(window).resize(function(){
       _resizeHeroTopNavigation(options);
     });
-    
-    // On load check where is scroll
-    _resizeHeroTopNavigation(options);
   }
 };
 
 /* Header */
 startupKit.uiKitHeader.header = function() {
-  startupKit.uiKitHeader._inFixedMode('.js-top-navigation');
+  startupKit.uiKitHeader._inFixedMode('.over-hero');
 };
 
  /* 

@@ -5,7 +5,10 @@
 
 @media (min-width: $screen-md-min) {
   body {
-    /*padding-top: $navbar-height + $top-navigation-padding;*/
+    padding-top: $navbar-height + $top-navigation-padding;
+    &.page-with-hero {
+      padding-top: 0;
+    }
   }
   .container-fluid {
     max-width: $max-width-screen;
