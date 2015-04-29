@@ -1,9 +1,13 @@
+@mixin top-navigation-wrapper-styles {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
+
 .top-navigation {
-  position: relative;
-  width: 100%;
-  z-index: 100;
-  left: 0;
-  top: 0;
+  .navbar-fixed-top {
+    transition: all 0.33s cubic-bezier(0.694, 0.0482, 0.335, 1);
+  }
+
   .navbar-collapse {
     background: rgba(0, 0, 0, 0.8);
     .navbar-nav {
@@ -12,31 +16,22 @@
       }
     }
   }
+
+  .navbar-brand {
+    display: block;
+    background: url("../images/binding-logo.png") no-repeat;
+    background-size: 151px 45px;
+    background-position: ($grid-gutter-width / 2) 10px;
+    min-height: 52px;
+    width: 175px;
+  }
+
+
+  &.navbar,
   .navbar {
-    background: transparent;
-    margin: 0 auto;
-    max-width: $max-width-screen;
-    border: 0;
-    top: 45px;
-    .navbar-toggle {
-      .icon-bar {
-        background-color: white;
-      }
-    }
     nav {
-      position: relative;
-      a, a:hover {
-        background-color: transparent;
-        color: white;
-      }
       .language-chooser {
-        .current-menu-item {
-          a {
-            color: white;
-          }
-        }
         a {
-          color: rgba(255, 255, 255, 0.8);
           font-size: 0.9em;
           &[lang="en"] {
             display: none;
@@ -45,19 +40,91 @@
       }
     }
   }
-  .navbar-fixed-top {
-    transition: all 0.33s cubic-bezier(0.694, 0.0482, 0.335, 1);
+  
+  // Normal top navigation. No hero imnage
+  &.top-navigation--static {
+    @include top-navigation-wrapper-styles; 
+    .container-fluid {
+      position: relative;
+    }
   }
-  .navbar-brand {
-    display: block;
-    background: url("../images/binding-logo-white.png") no-repeat;
-    background-size: 151px 45px;
-    min-height: 52px;
-    width: 175px;
+
+  // Custom Top navigation with hero
+  &.over-hero {
+    width: 100%;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    .navbar {
+      margin: 0 auto;
+      max-width: $max-width-screen;
+      border: 0;
+      top: 1px;
+      nav {
+        position: relative;
+      }
+    }
+
+    &.in {
+      .navbar-brand {
+        background: url("../images/binding-logo-white.png") no-repeat;
+      }
+      .navbar {
+        top: 20px;
+        background: transparent;
+        .navbar-toggle {
+          .icon-bar {
+            background-color: white;
+          }
+        }
+        nav {
+          a, a:hover {
+            background-color: transparent;
+            color: white;
+          }
+          .language-chooser {
+            .current-menu-item {
+              a {
+                color: white;
+              }
+            }
+            a {
+              color: rgba(255, 255, 255, 0.8);
+            }
+          }
+        }
+      }
+    }
   }
 }
+
+.fake-top-navigation-bg {
+  @include top-navigation-wrapper-styles; 
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: $navbar-height;
+}
+
 @media (min-width: $grid-float-breakpoint) {
+  .fake-top-navigation-bg {
+    height: 100px;
+  }
   .top-navigation {
+    &.top-navigation--static {
+      padding-top: 40px;
+    }
+    &.over-hero {
+      .navbar {
+        top: 40px;
+      }
+      &.in {
+        .navbar {
+          top: 40px;
+        }
+      }
+    }
     .navbar-collapse {
       background: transparent;
       .navbar-nav {
@@ -66,7 +133,7 @@
         }
         &.language-chooser {
           position: absolute;
-          top: -30px;
+          top: -20px;
           right: 0;
           li {
             a {
@@ -78,10 +145,4 @@
     }
   }
 }
-@media (min-width: $screen-sm-min) {
- .top-navigation {
-   .container-fluid {
-     position: relative;
-   }
- } 
-}
+
