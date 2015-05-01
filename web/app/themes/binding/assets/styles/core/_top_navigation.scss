@@ -14,6 +14,7 @@
 
   .navbar-toggle {
     border: 0;
+    &:focus,
     &:hover {
       background-color: transparent;
     }

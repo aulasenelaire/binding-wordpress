@@ -1,6 +1,6 @@
 .home__hero {
   position: relative;
-  height: 600px;
+  height: 500px;
   width: 100%;
   background-color: #333;
 }
@@ -36,6 +36,22 @@
   background: linear-gradient(to left,rgba(0,0,0,.65) 0,transparent 100%);
 }
 
+.home__main_content {
+  background: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.home__section {
+  background-color: white;
+  border-top: 2px solid rgba(0, 0, 0, 0.09);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.09);
+  padding: 20px 0;
+  margin: 20px 0;
+}
+
 @media (min-width: $screen-sm-min) {
   .home__hero__bg {
     background-position: 50% 0;
@@ -44,9 +60,17 @@
 
 @media (min-width: $screen-md-min) {
   .home__hero__caption {
-    bottom: 200px;
+    bottom: 100px;
     h1 {
-      font-size: 60px;
+      font-size: 45px;
     }
+  }
+
+  .home__main_content {
+    top: -20px;
+    position: relative;
+    z-index: 200;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
   }
 }
