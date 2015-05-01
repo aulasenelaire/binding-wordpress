@@ -19,7 +19,8 @@ function setup() {
   // Register wp_nav_menu() menus
   // http://codex.wordpress.org/Function_Reference/register_nav_menus
   register_nav_menus([
-    'top_menu' => __('Top Menu', 'binding')
+    'top_menu' => __('Top Menu', 'binding'),
+    'footer_menu' => __('Footer Menu', 'binding')
   ]);
 
   // Add post thumbnails

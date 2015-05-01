@@ -30,6 +30,7 @@ class BindingTimberConfig extends TimberSite {
 
 	function add_to_context( $context ) {
 		$context['top_menu'] = new TimberMenu('top_menu');
+    $context['footer_menu'] = new TimberMenu('footer_menu');
 		$context['site'] = $this;
 		return $context;
 	}

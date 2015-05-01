@@ -21,12 +21,12 @@
       <div role="main">
         {% block content %}{% endblock %}
       </div>
-
-      {% block footer %}
-        <footer>{% include 'footer.twig' %}</footer>
-        {{ function('wp_footer') }}
-      {% endblock %}
     </div>
+
+    {% block footer %}
+      <footer>{% include 'footer.twig' %}</footer>
+      {{ function('wp_footer') }}
+    {% endblock %}
 
 	</body>
 </html>

@@ -1,7 +1,33 @@
 <div class='container-fluid'>
   <div class='row'>
-    <div class='col-sm-12 text-center'>
-      Copyright {{"now"|date('Y')}}
-    </div>
+    {% for item in footer_menu.get_items|slice(0, 4) %}
+      <ul class="col-sm-12 col-md-3 list-unstyled">
+        <li>
+          <h4>{{item.title}}</h4>
+          <ul class="list-unstyled">
+            {% for child in item.get_children %}
+              <li>
+                <a href="{{child.get_link}}" class="small">{{child.title}}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </li>
+      </ul>      
+    {% endfor %}        
+
+      {#{% for item in footer_menu.get_items %}#}
+        {#<li>#}
+          {#<h4>{{item.title}}</h4>#}
+          {#{% if item.get_children %}#}
+            {#<ul class="list-unstyled">#}
+              {% for child in item.get_children %}
+                <li>
+                  <a href="{{child.get_link}}">{{child.title}}</a>
+                </li>
+              {% endfor %}
+            {#</ul>#}
+          {#{% endif %}#}
+        {#</li>#}
+      {#{% endfor %}#}
   </div>
 </div>
